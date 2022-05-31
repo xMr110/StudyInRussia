@@ -1,6 +1,5 @@
 @extends('layouts.BackEnd.app')
 
-
 @section('title')
     Dashboard
 @endsection

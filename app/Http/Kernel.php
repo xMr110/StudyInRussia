@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'IsAdmin' => \App\Http\Middleware\IsAdmin::class,
         'ActiveAccount' => \App\Http\Middleware\ActiveAccount::class,
         'CheckRole' => \App\Http\Middleware\CheckRole::class,
+        'RateLimit' => \App\Http\Middleware\RateLimit::class,
     ];
 }

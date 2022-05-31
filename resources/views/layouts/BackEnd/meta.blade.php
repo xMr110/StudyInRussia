@@ -13,3 +13,4 @@
 <link href="{{asset('BackEnd/layouts/vertical-light-menu/css/dark/plugins.css')}}" rel="stylesheet" type="text/css" />
 <!-- END GLOBAL MANDATORY STYLES -->
 
+<link href="{{asset('https://pro.fontawesome.com/releases/v5.10.0/css/all.css')}}" rel="stylesheet">

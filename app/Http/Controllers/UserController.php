@@ -11,11 +11,31 @@ class UserController extends Controller
 
 
 
-//    public function __construct()
-//    {
-//        $this->middleware(['CheckRole:ADMIN']);
-//       // $this->authorizeResource(User::class, 'user');
-//    }
+    protected function resourceAbilityMap()
+    {
+        return [
+            'index' => 'viewAny',
+            'create' => 'store',
+            'store' => 'store',
+            'show' => 'view',
+            'create' => 'create',
+            'store' => 'create',
+            'edit' => 'update',
+            'update' => 'update',
+            'destroy' => 'delete',
+        ];
+    }
+
+    protected function resourceMethodsWithoutModels()
+    {
+        return ['index','create', 'store'];
+    }
+
+    public function __construct()
+    {
+        $this->middleware(['CheckRole:ADMIN']);
+        $this->authorizeResource(User::class, 'user');
+    }
 
 
 
