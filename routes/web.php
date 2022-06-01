@@ -8,6 +8,8 @@ Auth::routes();
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/', function () {
+
+
         return view('FrontEnd.index');
     });
 });
