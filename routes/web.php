@@ -14,7 +14,7 @@ Route::prefix('admin')->middleware(['auth','ActiveAccount'])->name('admin.')->gr
     // admin index
     Route::get('/', [AdminController::class, 'index'])->name('index');
 
-    Route::middleware(['CheckRole:ADMIN'])->group(function () {
+    Route::middleware('CheckRole:'.\App\Models\Role::$ADMIN)->group(function () {
 
         //users
         Route::resource('users', UserController::class);

@@ -14,9 +14,9 @@ class CheckRole
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next,$roles)
+    public function handle(Request $request, Closure $next,$role)
     {
-        if (auth()->check() && in_array(auth()->user()->power, explode('|', $roles))  ) {
+        if (auth()->check() && (auth()->user()->role_id ==  $role)  ) {
             return $next($request);
         }
         abort(403);

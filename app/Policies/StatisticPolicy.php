@@ -19,7 +19,7 @@ class StatisticPolicy
         //
     }
     public function viewAny(User $user){
-        if(in_array($user->power,["ADMIN"]))
+        if(in_array($user->role_id,[Role::$ADMIN]))
             return 1;
         return 0;
     }

@@ -13,6 +13,7 @@
         "laravel/ui": "^3.4",
         "livewire/livewire": "^2.10",
         "spatie/laravel-flash": "^1.9",
+        "spatie/laravel-translatable": "^6.0",
         "yajra/laravel-datatables-oracle": "^10.0"
     },
     "require-dev": {

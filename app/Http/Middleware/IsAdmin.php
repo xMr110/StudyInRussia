@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Role;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\Auth::check() && \Auth::user()->power=="ADMIN") {
+        if (\Auth::check() && \Auth::user()->role_id==Role::$ADMIN) {
+
             return $next($request);
         }
         abort(404);

@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['CheckRole:ADMIN']);
+        $this->middleware(['CheckRole:'.\App\Models\Role::$ADMIN]);
         $this->authorizeResource(User::class, 'user');
     }
 
@@ -41,7 +41,6 @@ class UserController extends Controller
 
     public function index()
     {
-
         return view('admin.users.index');
     }
 
