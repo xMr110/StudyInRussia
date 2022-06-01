@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
-Route::get('/', function () { return view('FrontEnd.index');});
-
+Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
+    Route::get('/', function () {
+        return view('FrontEnd.index');
+    });
+});
 
 Route::prefix('admin')->middleware(['auth','ActiveAccount'])->name('admin.')->group(function (){
     // admin index
